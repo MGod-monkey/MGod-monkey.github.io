@@ -1,0 +1,24 @@
+/* 字体引入 */
+@font-face {
+    font-family: IPix;
+    src: url(https://mybog.s3.ladydaily.com/fonts/IPix.ttf) format("truetype");
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: DingTalk;
+    src: url(https://mybog.s3.bitiful.net/fonts/DingTalk_JinBuTi_Regular.woff2);
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: Smiley;
+    src: url(https://mybog.s3.bitiful.net/fonts/Smiley_Sans_Oblique_%E6%96%9C%E4%BD%93.woff2);
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: Source_Han;
+    src: url(https://mybog.s3.bitiful.net/fonts/Source_Han_Sans_SC_Normal_Normal.otf) format('opentype');
+    font-display: swap;
+  }
