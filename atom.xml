@@ -6,7 +6,7 @@
   <link href="https://mgodmonkey.love/atom.xml" rel="self"/>
   
   <link href="https://mgodmonkey.love/"/>
-  <updated>2023-05-21T08:50:48.167Z</updated>
+  <updated>2023-06-03T06:08:17.683Z</updated>
   <id>https://mgodmonkey.love/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://mgodmonkey.love/posts/c76bd3e9.html"/>
     <id>https://mgodmonkey.love/posts/c76bd3e9.html</id>
     <published>2023-05-06T09:13:27.000Z</published>
-    <updated>2023-05-21T08:50:48.167Z</updated>
+    <updated>2023-06-03T06:08:17.683Z</updated>
     
-    <content type="html"><![CDATA[<h1>ChatGPT项目</h1><h2 id="仿官网ChatGPT项目">仿官网ChatGPT项目</h2></br><blockquote><p>描述：对接ChatGPT API的个人网页项目(所使用的都是作者个人OpenAI账户的额度，且行且珍惜)</p></blockquote></br><p><img src="https://github.com/Yidadaa/ChatGPT-Next-Web/raw/main/docs/images/cover.png" alt="cover"></p></br><p>项目地址：<a href="https://github.com/Yidadaa/ChatGPT-Next-Web/">ChatGPT-Next-Web</a></p></br><blockquote><p>部署地址：<a href="http://chat.mgodmonkey.love/">传送门</a></p><p>访问码：wpqds666</p></blockquote><blockquote><ul><li>点击设置按钮，输入访问码即后即可正常使用所用功能。</li><li>GPT3,GPT3.5模型无任何限制，GPT4模型暂不可用</li></ul></blockquote></br><h2 id="学术专用版GPT项目"><s>学术专用版GPT项目</s></h2></br><p><img src="https://user-images.githubusercontent.com/96192199/230361456-61078362-a966-4eb5-b49e-3c62ef18b860.gif" alt="cover"></p></br><p>项目地址：<a href="https://github.com/binary-husky/gpt_academic">GPT_Academic</a></p></br><blockquote><p>部署地址：<a href="http://academic.mgodmonkey.love/">传送门</a></p></blockquote><blockquote><ul><li>无访问码限制，但有字数和请求限制</li><li>学术专用版ChatGPT，可一键学术优化以及英文翻译等</li></ul></blockquote><h2 id="必过通原实验-搜题库">必过通原实验-搜题库</h2></br><p><img src="https://user-images.githubusercontent.com/62071831/227830605-9a1d83ad-9820-4e3e-aae9-6cc57e19fbc5.gif" alt="cover"></p></br><p>项目地址：<a href="https://github.com/MGod-monkey/Must_Pass_Experiment_of_TY">Must_Pass_Experiment_of_TY</a></p></br><blockquote><p>部署地址：<a href="http://other.mgodmonkey.love:8000/search/">传送门</a></p></blockquote><blockquote><ul><li>无访问码限制，即开即用</li><li>收录多道通原实验原题，支持模糊</li></ul></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1>ChatGPT项目</h1><h2 id="仿官网ChatGPT项目">仿官网ChatGPT项目</h2></br><blockquote><p>描述：对接ChatGPT API的个人网页项目(所使用的都是作者个人OpenAI账户的额度，且行且珍惜)</p></blockquote></br><p><img src="https://github.com/Yidadaa/ChatGPT-Next-Web/raw/main/docs/images/cover.png" alt="cover"></p></br><p>项目地址：<a href="https://github.com/Yidadaa/ChatGPT-Next-Web/">ChatGPT-Next-Web</a></p></br><blockquote><p>部署地址：<a href="http://chat.mgodmonkey.love/">传送门</a></p><p>访问码：wpqds666</p></blockquote><blockquote><ul><li>点击设置按钮，输入访问码即后即可正常使用所用功能。</li><li>GPT3,GPT3.5模型无任何限制，GPT4模型暂不可用</li></ul></blockquote></br><h2 id="学术专用版GPT项目"><s>学术专用版GPT项目</s></h2></br><p><img src="https://user-images.githubusercontent.com/96192199/230361456-61078362-a966-4eb5-b49e-3c62ef18b860.gif" alt="cover"></p></br><p>项目地址：<a href="https://github.com/binary-husky/gpt_academic">GPT_Academic</a></p></br><blockquote><p>部署地址：<a href="http://academic.mgodmonkey.love/">传送门</a></p></blockquote><blockquote><ul><li>无访问码限制，但有字数和请求限制</li><li>学术专用版ChatGPT，可一键学术优化以及英文翻译等</li></ul></blockquote><h2 id="必过通原实验-搜题库">必过通原实验-搜题库</h2></br><p><img src="https://user-images.githubusercontent.com/62071831/227830605-9a1d83ad-9820-4e3e-aae9-6cc57e19fbc5.gif" alt="cover"></p></br><p>项目地址：<a href="https://github.com/MGod-monkey/Must_Pass_Experiment_of_TY">Must_Pass_Experiment_of_TY</a></p></br><blockquote><p>部署地址：<a href="http://ty.mgodmonkey.love:8000/search/">传送门</a></p></blockquote><blockquote><ul><li>无访问码限制，即开即用</li><li>收录多道通原实验原题，支持模糊</li></ul></blockquote>]]></content>
     
     
     <summary type="html">基于一些开源项目部署的指引</summary>
