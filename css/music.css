@@ -108,7 +108,7 @@
     margin: 0 160px 0 150px;
   }
   #anMusic-page .aplayer-info .aplayer-controller .aplayer-played {
-    background: var(--anzhiyu-white) !important;
+    background: var(--mgod-white) !important;
   }
   #anMusic-page .aplayer-info .aplayer-controller .aplayer-thumb {
     -webkit-transform: none;
@@ -157,7 +157,7 @@
   }
   
   #anMusic-page .aplayer-info .aplayer-time .aplayer-icon path {
-    fill: var(--anzhiyu-white);
+    fill: var(--mgod-white);
     opacity: 0.8;
   }
   
@@ -180,7 +180,7 @@
   }
   
   #anMusic-page ol > li span {
-    color: var(--anzhiyu-white);
+    color: var(--mgod-white);
   }
   
   #anMusic-page ol > li.aplayer-list-light .aplayer-list-cur {
@@ -199,11 +199,11 @@
   
   .page:has(#anMusic-page) #page-header.not-top-img #nav a,
   .page:has(#anMusic-page) #page-header #nav .back-home-button {
-    color: var(--anzhiyu-white);
+    color: var(--mgod-white);
   }
   
   body:has(#anMusic-page) .s-sticker div {
-    color: var(--anzhiyu-white) !important;
+    color: var(--mgod-white) !important;
   }
   
   body:has(#anMusic-page) .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon.aplayer-icon-loop {

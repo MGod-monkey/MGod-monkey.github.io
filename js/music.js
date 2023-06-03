@@ -1,4 +1,4 @@
-var anzhiyu = {
+var mgod = {
   // 音乐节目切换背景
   changeMusicBg: function (isChangeBg = true) {
     if (window.location.pathname != "/life/music/") {
@@ -20,14 +20,14 @@ var anzhiyu = {
           clearInterval(timer);
           anMusicBg.style.backgroundImage = musiccover.style.backgroundImage;
           // 绑定事件
-          anzhiyu.addEventListenerChangeMusicBg();
+          mgod.addEventListenerChangeMusicBg();
 
           // 暂停nav的音乐
           if (
             document.querySelector("#nav-music meting-js").aplayer &&
             !document.querySelector("#nav-music meting-js").aplayer.audio.paused
           ) {
-            anzhiyu.musicToggle();
+            mgod.musicToggle();
           }
         }
       }, 100);
@@ -38,7 +38,7 @@ var anzhiyu = {
     const aplayerIconMenu = anMusicPage.querySelector(".aplayer-info .aplayer-time .aplayer-icon-menu");
 
     anMusicPage.querySelector("meting-js").aplayer.on("loadeddata", function () {
-      anzhiyu.changeMusicBg();
+      mgod.changeMusicBg();
       console.info("player loadeddata");
     });
 
@@ -55,4 +55,4 @@ var anzhiyu = {
 };
 
 // 调用
-anzhiyu.changeMusicBg(false);
+mgod.changeMusicBg(false);

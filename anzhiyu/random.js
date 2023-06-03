@@ -1,4 +1,4 @@
-var posts=["posts/2013454d.html","posts/c76bd3e9.html"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};var friend_link_list=[{"name":"MGodmonkey","link":"https://www.mgodmonkey.love","avatar":"https://mybog.s3.ladydaily.com/imgs/head.jpg","descr":"心里有光，万物皆是光！","siteshot":"https://source.fomal.cc/siteshot/www.fomal.cn.jpg"}];
+var posts=["posts/c76bd3e9.html","posts/2013454d.html"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};var friend_link_list=[{"name":"MGodmonkey","link":"https://www.baidu.com","avatar":"https://mybog.s3.ladydaily.com/imgs/head.jpg","descr":"心里有光，万物皆是光！","siteshot":"https://source.fomal.cc/siteshot/www.fomal.cn.jpg"}];
     var refreshNum = 1;
     function addFriendLinksInFooter() {
       var footerRandomFriendsBtn = document.getElementById("footer-random-friends-btn");
