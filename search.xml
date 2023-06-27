@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>从0制作自主空中机器人-1【课程介绍】</title>
+      <link href="/posts/aa750162.html"/>
+      <url>/posts/aa750162.html</url>
+      
+        <content type="html"><![CDATA[<style type="text/css">  .video {  position: relative;  padding-bottom: 56.25%;  height: 0;  overflow: hidden;  }  .video iframe,  .video object,  .video embed {  position: absolute;  top: 0;  left: 0;  width: 100%;  height: 100%;  }</style><blockquote><h2 id="关于本课程：">关于本课程：</h2><p>本课程是由浙江大学FAST-Lab、浙江大学湖州研究院、深蓝学院联合发行的免费开源课程，旨在发扬开源精神，降低自主空中机器人门槛</p><h3 id="课程视频">课程视频</h3><p>B站：<a href="https://www.bilibili.com/video/BV1WZ4y167me/?p=1">【完结】从0制作自主空中机器人 | 开源 | 浙江大学Fast-Lab</a></p><p>深蓝学院：<a href="https://www.shenlanxueyuan.com/course/470">从0制作自主空中机器人</a></p><h3 id="相关源码">相关源码</h3><p>GitHub：<a href="https://github.com/ZJU-FAST-Lab/Fast-Drone-250">https://github.com/ZJU-FAST-Lab/Fast-Drone-250</a></p><p>Gitee：<a href="https://gitee.com/pn_code/Fast-Drone-250">https://gitee.com/pn_code/Fast-Drone-250</a></p></blockquote><div class="note warning modern"><p><b>本网站只做资源整合，资源全部来源B站和深蓝学院！</b></p></div><h2 id="课程介绍">课程介绍</h2><div align=center class="video">    <iframe src="//player.bilibili.com/player.html?aid=382426906&bvid=BV1WZ4y167me&cid=554101966&page=1"     scrolling="no"     border="0"     frameborder="no"     framespacing="0"     high_quality=1    danmaku=1     allowfullscreen="true">     </iframe></div><h2 id="硬件选型">硬件选型</h2><div align=center class="video">    <iframe src="//player.bilibili.com/player.html?aid=382426906&bvid=BV1WZ4y167me&cid=555703026&page=3"     scrolling="no"     border="0"     frameborder="no"     framespacing="0"     high_quality=1    danmaku=1     allowfullscreen="true">     </iframe></div><h2 id="相关下载">相关下载</h2><ul><li>碳板图纸：<a href="https://www.shenlanxueyuan.com/course/470/activiy/14728/download?materialId=6238">下载地址</a></li><li>课程硬件清单选型：<a href="https://www.shenlanxueyuan.com/course/470/activiy/14726/download?materialId=6287">下载地址</a></li><li>README.pdf：<a href="https://www.shenlanxueyuan.com/course/470/activiy/14862/download?materialId=6664">下载地址</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 从0制作自主空中机器人 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ros </tag>
+            
+            <tag> 无人机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ROS资源汇总</title>
       <link href="/posts/232d6cf1.html"/>
       <url>/posts/232d6cf1.html</url>
@@ -204,7 +231,7 @@
       
       <categories>
           
-          <category> 项目分析 </category>
+          <category> 项目分享 </category>
           
       </categories>
       
