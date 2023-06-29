@@ -191,15 +191,6 @@
   </url>
   
   <url>
-    <loc>https://mgodmonkey.love/life/movies/index.html</loc>
-    
-    <lastmod>2023-05-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://mgodmonkey.love/life/music/index.html</loc>
     
     <lastmod>2023-05-21</lastmod>
@@ -209,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://mgodmonkey.love/site/census/index.html</loc>
+    <loc>https://mgodmonkey.love/life/movies/index.html</loc>
     
     <lastmod>2023-05-21</lastmod>
     
@@ -219,6 +210,15 @@
   
   <url>
     <loc>https://mgodmonkey.love/personal/about/index.html</loc>
+    
+    <lastmod>2023-05-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mgodmonkey.love/site/census/index.html</loc>
     
     <lastmod>2023-05-21</lastmod>
     
@@ -384,14 +384,14 @@
   </url>
   
   <url>
-    <loc>https://mgodmonkey.love/categories/%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://mgodmonkey.love/categories/%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/ros/</loc>
     <lastmod>2023-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mgodmonkey.love/categories/%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/ros/</loc>
+    <loc>https://mgodmonkey.love/categories/%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2023-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
