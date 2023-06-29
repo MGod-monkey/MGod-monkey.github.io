@@ -22,3 +22,37 @@
     src: url(https://mybog.s3.bitiful.net/fonts/Source_Han_Sans_SC_Normal_Normal.otf) format('opentype');
     font-display: swap;
   }
+
+/* .video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  }
+  .video iframe,
+  .video object,
+  .video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  } */
+
+/*哔哩哔哩视频适配*/
+.video {
+  position: relative;
+  width: 90%;
+  height: auto;
+  padding-bottom: 75%;
+  margin: 3% auto;
+  text-align: center;
+}
+
+.video iframe {
+  position: absolute;
+  width: 100%;
+  height: 86%;
+  left: 0;
+  top: 0;
+}
