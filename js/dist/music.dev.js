@@ -5,7 +5,7 @@ var anzhiyu = {
   changeMusicBg: function changeMusicBg() {
     var isChangeBg = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
-    if (window.location.pathname != "/life/music/") {
+    if (window.location.pathname != "/music/") {
       return;
     }
 
@@ -47,7 +47,7 @@ var anzhiyu = {
       document.getElementById("menu-mask").style.animation = "0.5s ease 0s 1 normal none running to_show";
     });
     document.getElementById("menu-mask").addEventListener("click", function () {
-      if (window.location.pathname != "/life/music/") return;
+      if (window.location.pathname != "/music/") return;
       anMusicPage.querySelector(".aplayer-list").classList.remove("aplayer-list-hide");
     });
   }
