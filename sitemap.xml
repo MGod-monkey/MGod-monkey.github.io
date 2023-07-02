@@ -300,13 +300,6 @@
   </url>
   
   <url>
-    <loc>https://mgodmonkey.love/tags/ros/</loc>
-    <lastmod>2023-07-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://mgodmonkey.love/tags/lvgl/</loc>
     <lastmod>2023-07-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -322,6 +315,13 @@
   
   <url>
     <loc>https://mgodmonkey.love/tags/Arduino/</loc>
+    <lastmod>2023-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://mgodmonkey.love/tags/ros/</loc>
     <lastmod>2023-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -372,14 +372,14 @@
   </url>
   
   <url>
-    <loc>https://mgodmonkey.love/categories/ros/</loc>
+    <loc>https://mgodmonkey.love/categories/lvgl/</loc>
     <lastmod>2023-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mgodmonkey.love/categories/lvgl/</loc>
+    <loc>https://mgodmonkey.love/categories/ros/</loc>
     <lastmod>2023-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
