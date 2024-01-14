@@ -47,6 +47,15 @@
   </url>
   
   <url>
+    <loc>https://www.mgodmonkey.love/life/air-conditioner/index.html</loc>
+    
+    <lastmod>2024-01-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.mgodmonkey.love/life/bangumis/index.html</loc>
     
     <lastmod>2024-01-08</lastmod>
@@ -65,7 +74,16 @@
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.love/life/air-conditioner/index.html</loc>
+    <loc>https://www.mgodmonkey.love/site/census/index.html</loc>
+    
+    <lastmod>2024-01-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mgodmonkey.love/site/time/index.html</loc>
     
     <lastmod>2024-01-08</lastmod>
     
@@ -101,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.love/site/census/index.html</loc>
+    <loc>https://www.mgodmonkey.love/social/fcircle/index.html</loc>
     
     <lastmod>2024-01-08</lastmod>
     
@@ -111,24 +129,6 @@
   
   <url>
     <loc>https://www.mgodmonkey.love/personal/task_list/index.html</loc>
-    
-    <lastmod>2024-01-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mgodmonkey.love/site/time/index.html</loc>
-    
-    <lastmod>2024-01-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mgodmonkey.love/social/fcircle/index.html</loc>
     
     <lastmod>2024-01-08</lastmod>
     
