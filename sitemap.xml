@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.love/personal/task_list/index.html</loc>
+    <loc>https://www.mgodmonkey.love/site/census/index.html</loc>
     
     <lastmod>2024-01-30</lastmod>
     
@@ -110,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.love/site/census/index.html</loc>
+    <loc>https://www.mgodmonkey.love/personal/task_list/index.html</loc>
     
     <lastmod>2024-01-30</lastmod>
     
@@ -450,6 +450,13 @@
   </url>
   
   <url>
+    <loc>https://www.mgodmonkey.love/tags/pyqt5/</loc>
+    <lastmod>2024-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.mgodmonkey.love/tags/Markdown/</loc>
     <lastmod>2024-01-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -458,13 +465,6 @@
   
   <url>
     <loc>https://www.mgodmonkey.love/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/</loc>
-    <lastmod>2024-01-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mgodmonkey.love/tags/pyqt5/</loc>
     <lastmod>2024-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
