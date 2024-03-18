@@ -20,15 +20,6 @@
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.love/posts/d87f7e0c.html</loc>
-    
-    <lastmod>2024-03-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.mgodmonkey.love/posts/4528cc75.html</loc>
     
     <lastmod>2024-02-26</lastmod>
@@ -92,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.love/album/huiPhoto/index.html</loc>
+    <loc>https://www.mgodmonkey.love/album/dailyPhoto/index.html</loc>
     
     <lastmod>2024-02-05</lastmod>
     
@@ -101,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.love/album/dailyPhoto/index.html</loc>
+    <loc>https://www.mgodmonkey.love/album/huiPhoto/index.html</loc>
     
     <lastmod>2024-02-05</lastmod>
     
@@ -209,6 +200,15 @@
   </url>
   
   <url>
+    <loc>https://www.mgodmonkey.love/site/time/index.html</loc>
+    
+    <lastmod>2024-01-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.mgodmonkey.love/social/link/index%20copy.html</loc>
     
     <lastmod>2024-01-08</lastmod>
@@ -219,15 +219,6 @@
   
   <url>
     <loc>https://www.mgodmonkey.love/social/link/index.html</loc>
-    
-    <lastmod>2024-01-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mgodmonkey.love/site/time/index.html</loc>
     
     <lastmod>2024-01-08</lastmod>
     
@@ -608,13 +599,6 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://www.mgodmonkey.love/tags/%E7%A5%9D%E7%A6%8F/</loc>
-    <lastmod>2024-03-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
@@ -675,13 +659,6 @@
   
   <url>
     <loc>https://www.mgodmonkey.love/categories/%E9%97%AE%E9%A2%98%E5%A4%A7%E5%85%A8/</loc>
-    <lastmod>2024-03-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mgodmonkey.love/categories/%E7%A5%9D%E7%A6%8F/</loc>
     <lastmod>2024-03-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
