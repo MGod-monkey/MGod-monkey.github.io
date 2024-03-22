@@ -6,7 +6,7 @@
   <link href="https://www.mgodmonkey.love/atom.xml" rel="self"/>
   
   <link href="https://www.mgodmonkey.love/"/>
-  <updated>2024-02-17T15:15:55.531Z</updated>
+  <updated>2024-03-22T04:46:35.053Z</updated>
   <id>https://www.mgodmonkey.love/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DVXplorer事件相机校准</title>
+    <link href="https://www.mgodmonkey.love/posts/daf16f02.html"/>
+    <id>https://www.mgodmonkey.love/posts/daf16f02.html</id>
+    <published>2024-03-21T08:00:02.000Z</published>
+    <updated>2024-03-22T04:46:35.053Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>参考<strong><a href="http://READ.md">READ.md</a></strong>中的教程：</p><ul><li><p><a href="https://gitlab.com/inivation/dv/dv-imu-cam-calibration/-/tree/master">文件 · master · iniVation AG / dv-core / dv-imu-cam-calibration · GitLab</a></p></li><li><p><a href="https://gitlab.com/inivation/dv/dv-imu-cam-calibration/-/blob/master/docs/tutorial.md">docs/tutorial.md · master · iniVation AG / dv-core / dv-imu-cam-calibration · GitLab</a></p></li></ul></blockquote><h2 id="1-安装DV驱动环境">1.安装DV驱动环境</h2><blockquote><p><strong>参考上一篇博客：</strong><a href="https://www.mgodmonkey.love/posts/4528cc75.html">DVXplorer 事件相机入门 | MGodmonkey の世界</a></p></blockquote><p>外加额外的依赖，根据Ubuntu发行版启用适当的iniVation PPA:</p><ul><li>For Ubuntu 18.04:</li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:ubuntu-toolchain-r/test</span><br><span class="line">sudo add-apt-repository ppa:inivation-ppa/inivation-bionic</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install dv-processing dv-runtime-dev gcc-10 g++-10 libboost-all-dev libsuitesparse-dev libgtest-dev</span><br></pre></td></tr></table></figure><ul><li>For Ubuntu 20.04:</li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:inivation-ppa/inivation</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install dv-processing dv-runtime-dev gcc-10 g++-10 libboost-all-dev libsuitesparse-dev libgtest-dev</span><br></pre></td></tr></table></figure><p>可能还需要一些额外的ROS依赖项:</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Example for ROS Noetic on Ubuntu 20.04</span></span><br><span class="line">sudo apt install python3-catkin python3-catkin-tools ros-noetic-catkin ros-noetic-camera-info-manager</span><br></pre></td></tr></table></figure><h2 id="2-下载校准工具包">2.下载校准工具包</h2><ul><li>下载工程文件</li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://gitlab.com/inivation/dv/dv-imu-cam-calibration.git</span><br></pre></td></tr></table></figure><ul><li>编译依赖<ul><li>boost</li><li>eigen</li><li>libsuitesparse-de</li><li>libgtest-dev</li><li>dv-runtime-dev</li><li>gcc &gt;= 10.0</li></ul></li></ul><blockquote><p>注：如果完成第一步中的全部过程，上面的依赖已经全部安装完成</p></blockquote><ul><li>编译工程</li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line"><span class="comment"># 此部分与教程中不同，ubuntu20中默认的gcc版本为9.4.0</span></span><br><span class="line"><span class="comment"># cmake -DUSE_CUDA_STEREO=ON .. </span></span><br><span class="line">cmake -DUSE_CUDA_STEREO=ON -DCMAKE_C_COMPILER=gcc-10 -DCMAKE_CXX_COMPILER=g++-10 ..</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure><h2 id="3-标定">3.标定</h2><ul><li><p>下载并打印标定板：<a href="https://gitlab.com/inivation/dv/dv-imu-cam-calibration/-/blob/master/docs/april_6x6_2x2cm.pdf">下载入口</a></p></li><li><p>打开<strong>DV-GUI</strong>并设置下面的模块</p><ul><li><p>在<strong>DV-GUI</strong>中添加模块（需要提前将工程文件添加到路径中才能搜索得到）</p><img src="https://s2.loli.net/2024/03/21/zuZejEfSsd3iKFC.png" style="zoom: 33%;" /><p><img src="https://s2.loli.net/2024/03/21/GyDYrlj9K8Eb6OC.png" alt=""></p><img src="https://s2.loli.net/2024/03/21/AQmlvuwbrO1ygan.png" alt="image-20240321172045522" style="zoom:80%;" /></li><li><p><strong>DV</strong>模块的配置包括相机模块和相机<strong>IMU</strong>校准模块。在一种情况下事件相机我们还需要使用累加器将事件转换为图像帧。下面显示了使用事件摄像机的示例结构。</p></li></ul></li></ul><img src="https://s2.loli.net/2024/03/21/Ov8BuiApMt5dEWq.png" style="zoom: 80%;" />- 设置每个模块的参数（如果找不到详细参数，点击每个模块旁边的加号就有了）<blockquote><p>accumulator</p><ul><li>decay function = linear</li><li>decay param = 1e-8</li><li>event contribution = 0.35</li><li>min potential = 0.0</li><li>max potential = 1.0</li></ul><img src="https://s2.loli.net/2024/03/21/8VpIb7c5GaSDfXk.png" style="zoom: 80%;" /></blockquote><blockquote><p>与教程中的似乎不一样，不知道是不是升级了</p><img src="https://s2.loli.net/2024/03/21/KhCYvr4UoyDGg5V.png" style="zoom:80%;" /></blockquote><blockquote><p>注：似乎遇到问题了，先不管，后面在修改</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;参考&lt;strong&gt;&lt;a href=&quot;http://READ.md&quot;&gt;READ.md&lt;/a&gt;&lt;/strong&gt;中的教程：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://gitlab.com/inivation/dv/dv-im</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>2024女神节祝福</title>
+    <link href="https://www.mgodmonkey.love/posts/d87f7e0c.html"/>
+    <id>https://www.mgodmonkey.love/posts/d87f7e0c.html</id>
+    <published>2024-03-06T03:34:18.000Z</published>
+    <updated>2024-03-22T04:46:32.933Z</updated>
+    
+    <content type="html"><![CDATA[<div class="birthday-card">    <!-- Inner -->    <div class="cover-inner">        <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5n439L9Qd0vjVe_SJd2TteNwCAIRTXqkJXUbw6jORxlq7S1XO7NLzPRUi-RSiA3suzW8&usqp=CAU" width="100%"> -->        <img src="https://s2.loli.net/2024/03/06/1PM5NTqYKWLFhZX.jpg" width="100%">    </div>    <div class="cover-outer">        <!-- <img src="https://images.esellerpro.com/3274/I/318/37/lrgscaleAO002.jpg" width="100%"> -->        <img src="https://s2.loli.net/2024/03/06/WScBJeYXlKx5ILD.jpg" width="100%">    </div>    <!-- Text -->    <div class="text">        <p class="title">            女神节快乐        </p>        <p class="title2">To Rong</p>        <p> 这世界有多美 </p>        <p> 女性就有多美✨ </p>        <p> 愿你眼里总有光芒💫 </p>        <p> 心里总藏希冀❤️‍🔥 </p>    </div></div><style>body {  background: #fbdcdc;  height: 100%;  margin: 0;}.birthday-card {  position: relative;  width: 300px;  height: 420px;  border: 10px solid #ef5050;  margin: 60px auto 0 auto;  -webkit-box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);          box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(255, 255, 255, 0.5))), url("https://images.unsplash.com/photo-1527481138388-31827a7c94d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXxBT3o0SFFDbVdEa3x8ZW58MHx8fHw%3D&w=1000&q=80");  background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.5)), url("https://images.unsplash.com/photo-1527481138388-31827a7c94d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXxBT3o0SFFDbVdEa3x8ZW58MHx8fHw%3D&w=1000&q=80");  background-position: center;  background-repeat: no-repeat;  background-size: cover;}/* .birthday-card {  position: relative;  width: 300px;  height: 395px;  border: 10px solid #ef5050;  margin: 60px auto 0 auto;  -webkit-box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);          box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(255, 255, 255, 0.5))), url("https://images.unsplash.com/photo-1527481138388-31827a7c94d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXxBT3o0SFFDbVdEa3x8ZW58MHx8fHw%3D&w=1000&q=80");  background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.5)), url("https://images.unsplash.com/photo-1527481138388-31827a7c94d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXxBT3o0SFFDbVdEa3x8ZW58MHx8fHw%3D&w=1000&q=80");  background-position: center;  background-repeat: no-repeat;  background-size: cover;} */.birthday-card .text {  width: 80%;  height: 80%;  margin: auto;  font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;}.birthday-card .text > p {  font-size: 1.2em;  color: #331717;  list-style: 1.4;  font-style: italic;  text-align: center;  margin: 30px auto 0 auto;}.birthday-card .text .title {  /* font-style: italic; */  font-weight: bold;  font-size: 1.8em;  margin: 20px auto 0px auto;  padding-top: 40px;}.birthday-card .text .title2 {  font-weight: bold;  font-style: italic;  font-size: 1.4em;  margin: 0px auto 20px auto;}.birthday-card .cover-outer {  position: absolute;  width: 100%;  height: 100%;  margin: -10px 0 0 -10px;  border: 10px solid #ef5050;  -webkit-backface-visibility: hidden;          backface-visibility: hidden;  -webkit-transform-style: preserve-3d;          transform-style: preserve-3d;  -webkit-transform-origin: 0% 50%;          transform-origin: 0% 50%;  -webkit-transform: perspective(800px) rotateY(0deg);          transform: perspective(800px) rotateY(0deg);  -webkit-transition: all 0.8s ease-in-out;  transition: all 0.8s ease-in-out;}.birthday-card .cover-outer img {  -webkit-box-shadow: 0px 6px 11px 7px rgba(0, 0, 0, 0.22);          box-shadow: 0px 6px 11px 7px rgba(0, 0, 0, 0.22);  border-radius: 5px;}.birthday-card .cover-inner {  position: absolute;  width: 100%;  height: 100%;  border: 10px solid #ef5050;  background-color: #ef5050;  margin: -10px 0px 0 -10px;  -webkit-backface-visibility: visible;          backface-visibility: visible;  -webkit-filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));          filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));  -webkit-transform-style: preserve-3d;          transform-style: preserve-3d;  -webkit-transform-origin: 0% 50%;          transform-origin: 0% 50%;  -webkit-transform: perspective(800px) rotateY(0deg);          transform: perspective(800px) rotateY(0deg);  -webkit-transition: all 0.8s ease-in-out;  transition: all 0.8s ease-in-out;  overflow: hidden;}.birthday-card .cover-inner img {  -webkit-transform: rotateY(170deg);          transform: rotateY(170deg);}.birthday-card:hover .cover-outer {  -webkit-transform: perspective(800px) rotateY(-170deg);          transform: perspective(800px) rotateY(-170deg);}.birthday-card:hover .cover-inner {  -webkit-transform: perspective(800px) rotateY(-170deg);          transform: perspective(800px) rotateY(-170deg);  -webkit-box-shadow: 7px 0 5px 0 rgba(0, 0, 0, 0.3), inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);          box-shadow: 7px 0 5px 0 rgba(0, 0, 0, 0.3), inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);}</style>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;div class=&quot;birthday-card&quot;&gt;
+    &lt;!-- Inner --&gt;
+    &lt;div class=&quot;cover-inner&quot;&gt;
+        &lt;!-- &lt;img src=&quot;https://encrypted-tbn0.gstatic.com/image</summary>
+      
+    
+    
+    
+    <category term="祝福" scheme="https://www.mgodmonkey.love/categories/%E7%A5%9D%E7%A6%8F/"/>
+    
+    
+    <category term="祝福" scheme="https://www.mgodmonkey.love/tags/%E7%A5%9D%E7%A6%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>wsl连接USB设备</title>
@@ -499,50 +550,6 @@
     <category term="ros" scheme="https://www.mgodmonkey.love/tags/ros/"/>
     
     <category term="无人机" scheme="https://www.mgodmonkey.love/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从0制作自主空中机器人-1【课程介绍】</title>
-    <link href="https://www.mgodmonkey.love/posts/aa750162.html"/>
-    <id>https://www.mgodmonkey.love/posts/aa750162.html</id>
-    <published>2023-06-27T09:00:02.000Z</published>
-    <updated>2024-01-08T16:21:46.716Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><h2 id="关于本课程：">关于本课程：</h2><p>本次课程是一套面向对<strong>自主空中机器人</strong>感兴趣的学生、爱好者、相关从业人员的免费课程，包含了从<strong>硬件组装</strong>、<strong>机载电脑环境设置</strong>、<strong>代码部署</strong>、实机实验等全套详细流程，带你从0开始，组装属于自己的自主无人机，并让它可以在未知的环境中自由避障穿行。</p><p>本次课程的重心主要落在自主空中机器人的搭建、代码部署及调试上，关于自主空中机器人的一些理论基础，例如<strong>动力学模型</strong>，<strong>路径搜索</strong>，轨迹规划，<strong>地图构建</strong>等内容。</p><h3 id="课程视频">课程视频</h3><p><strong>B站：</strong><a href="https://www.bilibili.com/video/BV1WZ4y167me/?p=1">【完结】从0制作自主空中机器人 | 开源 | 浙江大学Fast-Lab</a></p><p><strong>深蓝学院：</strong><a href="https://www.shenlanxueyuan.com/course/470">从0制作自主空中机器人</a></p><h3 id="相关源码">相关源码</h3><p><strong>GitHub：</strong><a href="https://github.com/ZJU-FAST-Lab/Fast-Drone-250">https://github.com/ZJU-FAST-Lab/Fast-Drone-250</a></p><p><strong>Gitee：</strong><a href="https://gitee.com/pn_code/Fast-Drone-250">https://gitee.com/pn_code/Fast-Drone-250</a></p></blockquote><h2 id="1-课程介绍">1.课程介绍</h2><div align=center class="video">    <iframe src="//player.bilibili.com/player.html?aid=382426906&bvid=BV1WZ4y167me&cid=554101966&page=1&autoplay=0&high_quality=1"     scrolling="no"     border="0"     frameborder="no"     framespacing="0"     high_quality=1    danmaku=1     allowfullscreen="true">     </iframe></div><h2 id="2-相关下载">2.相关下载</h2><ul><li><strong>碳板图纸：</strong><a href="https://mybog.s3.bitiful.net/ros/zero/%E7%A2%B3%E6%9D%BF%E5%9B%BE%E7%BA%B8.zip">下载地址</a></li><li><strong>README.pdf：</strong><a href="https://mybog.s3.bitiful.net/ros/zero/readme.pdf">下载地址</a></li></ul><div class="note warning modern"><p><b>本网站只做课程笔记和资源整合，资源全部来源B站和深蓝学院，如有侵权，请联系站长删除！</b></p></div>]]></content>
-    
-    
-    <summary type="html">从0制作自主空中机器人</summary>
-    
-    
-    
-    <category term="从0制作自主空中机器人" scheme="https://www.mgodmonkey.love/categories/%E4%BB%8E0%E5%88%B6%E4%BD%9C%E8%87%AA%E4%B8%BB%E7%A9%BA%E4%B8%AD%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
-    
-    
-    <category term="ros" scheme="https://www.mgodmonkey.love/tags/ros/"/>
-    
-    <category term="无人机" scheme="https://www.mgodmonkey.love/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ROS资源汇总</title>
-    <link href="https://www.mgodmonkey.love/posts/232d6cf1.html"/>
-    <id>https://www.mgodmonkey.love/posts/232d6cf1.html</id>
-    <published>2023-06-23T14:15:54.000Z</published>
-    <updated>2024-02-16T13:29:14.238Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1-环境安装">1.环境安装</h2><p>推荐使用鱼香ros的一键安装脚本：一行代码搭建机器人开发环境(ROS/ROS2/ROSDEP)</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://fishros.com/install -O fishros &amp;&amp; . fishros</span><br></pre></td></tr></table></figure><h3 id="支持工具">支持工具</h3><ul><li>一键安装:ROS(支持ROS和ROS2,树莓派Jetson) <a href="https://github.com/fishros">贡献@小鱼</a></li><li>一键安装:VsCode(支持amd64和arm64) <a href="https://github.com/fishros">贡献@小鱼</a></li><li>一键安装:github桌面版(小鱼常用的github客户端) <a href="https://github.com/fishros">贡献@小鱼</a></li><li>一键安装:nodejs开发环境(通过nodejs可以预览小鱼官网噢) <a href="https://github.com/fishros">贡献@小鱼</a></li><li>一键配置:rosdep(小鱼的rosdepc,又快又好用) <a href="https://github.com/fishros">贡献@小鱼</a></li><li>一键配置:ROS环境(快速更新ROS环境设置,自动生成环境选择) <a href="https://github.com/fishros">贡献@小鱼</a></li><li>一键配置:系统源(更换系统源,支持全版本Ubuntu系统) <a href="https://github.com/fishros">贡献@小鱼</a></li><li>一键安装:Docker(支持amd64和arm64) <a href="https://github.com/alyssa1024">贡献@alyssa</a></li><li>一键安装:cartographer <a href="https://github.com/fishros">贡献@小鱼&amp;Catalpa</a></li><li>一键安装:微信客户端 <a href="https://github.com/fishros">贡献@小鱼</a></li></ul><blockquote><p>开源地址：<a href="https://github.com/fishros/install">https://github.com/fishros/install</a></p><p>问题汇总：<a href="https://www.fishros.org.cn/forum/category/7/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85">一键安装 | 鱼香ROS (fishros.org.cn)</a></p></blockquote><h2 id="2-入门教程">2.入门教程</h2><h3 id="2-1视频教程">2.1视频教程</h3><ul><li>古月居（重点推荐）<ul><li>ros1：<a href="https://www.bilibili.com/video/BV1zt411G7Vn/?spm_id_from=333.999.0.0">【古月居】古月·ROS入门21讲 | 一学就会的ROS机器人入门教程_哔哩哔哩_bilibili</a></li><li>ros2：<a href="https://www.bilibili.com/video/BV16B4y1Q7jQ/?spm_id_from=333.999.0.0">【古月居】古月·ROS2入门21讲 | 带你认识一个全新的机器人操作系统_哔哩哔哩_bilibili</a></li></ul></li><li>鱼香ROS（较基础，推荐）<ul><li>ros2：<a href="https://www.bilibili.com/video/BV1gr4y1Q7j5/?spm_id_from=333.337.search-card.all.click&amp;vd_source=73fb4054e8596a168f02a53f50e6de20">【鱼香ROS】动手学ROS2|ROS2基础入门到实践教程|小鱼带你手把手学习ROS2_哔哩哔哩_bilibili</a></li></ul></li><li>中科院ROS教程<ul><li>ros1：<a href="https://www.bilibili.com/video/BV1mJ411R7Ni/?spm_id_from=333.337.search-card.all.click&amp;vd_source=73fb4054e8596a168f02a53f50e6de20">中科院软件所-机器人操作系统入门（ROS入门教程）_哔哩哔哩_bilibili</a></li></ul></li><li>Autolabor_ROS教程<ul><li>ros1：<a href="https://www.bilibili.com/video/BV1Ci4y1L7ZZ/?spm_id_from=333.337.search-card.all.click">【Autolabor初级教程】ROS机器人入门_哔哩哔哩_bilibili</a></li></ul></li></ul><h3 id="2-2图文教程">2.2图文教程</h3><ul><li>古月居：<a href="https://book.guyuehome.com/">ROS2入门教程 (guyuehome.com)</a></li><li>鱼香ROS：<a href="https://fishros.com/d2lros2/#/">动手学ROS2 (fishros.com)</a></li><li>ROS官方文档：<a href="https://docs.ros.org/en/humble/index.html">ROS 2 Documentation — ROS 2 Documentation: Humble documentation</a></li><li>中科院MOOC：<a href="https://sychaichangkun.gitbooks.io/ros-tutorial-icourse163/content/chapter1/">中国大学MOOC—《机器人操作系统入门》课程讲义</a></li></ul><h2 id="3-常用框架">3.常用框架</h2><h3 id="3-1自主导航">3.1<a href="https://navigation.ros.org/">自主导航</a></h3><blockquote><p>比如移动机器人基本都会具备的自主导航功能，ROS2提供了完整的自主导航系统框架和各种实现好的算法，即便我们不开发任何代码，也可以在自己的机器人上，使用这套系统，快速实现自主导航的基本功能。</p><p>大家如果要进行相关的应用开发，可以参考这个链接中的内容：<a href="https://navigation.ros.org/">https://navigation.ros.org/</a></p></blockquote><p><img src="https://s2.loli.net/2023/06/23/nZGf7wpHQRL8qsy.png" alt=""></p><h3 id="3-2自动驾驶">3.2<a href="https://www.autoware.org/">自动驾驶</a></h3><blockquote><p>在ROS社区中，有一个著名的自动驾驶框架——Autoware，包含了自动驾驶中的感知、规划、控制等模块和实现，功能非常丰富，很多商业化的自动驾驶系统，也参考了这个框架。</p><p>大家如果对自动驾驶感兴趣，可以参考这几个链接：</p><p><a href="https://www.autoware.org/">https://www.autoware.org/</a></p><p><a href="https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/">https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/</a></p></blockquote><p><img src="https://s2.loli.net/2023/06/23/2oJtpqnvFMlKULu.png" alt=""></p><h3 id="3-3路径规划">3.3<a href="https://moveit.ros.org/">路径规划</a></h3><blockquote><p>此外还有机械臂相关的运动规划、碰撞检测、视觉分拣等功能，也都可以使用ROS中的MoveIt框架。</p><p>这也是ROS中非常经典的功能，大家可以在这个链接中找到更多内容:</p><p><a href="https://moveit.ros.org/">https://moveit.ros.org/</a></p></blockquote><p><img src="https://s2.loli.net/2023/06/23/vf9wlsUr2C1pz3h.png" alt=""></p><h3 id="3-4机器人学">3.4机器人学</h3><p><img src="https://s2.loli.net/2023/06/23/1iu9VPDWo6TYjrX.png" alt=""></p><blockquote><p>ROS是机器人开发的工具，重在学习实操技能。至于内功的修炼，就得学习机器人学相关的理论知识，比如《机器人学导论》，被称为机器人工程师人手必备的一本理论书籍，推荐大家仔细阅读。</p></blockquote><ul><li><a href="https://www.bilibili.com/video/av4506104/">斯坦福大学公开课——机器人学_哔哩哔哩_bilibili</a></li><li><a href="https://www.bilibili.com/video/BV1v4411H7ez/">台大机器人学之运动学——林沛群（含课件+书籍）_哔哩哔哩_bilibili</a></li><li><a href="https://www.youtube.com/watch?v=XTmlhvlmcf8&amp;list=PLL57Sz4fhxLpCXgN0lvCF7aHAlRA5FoFr">Autoware Course Lecture 1: Development Environment - YouTube</a></li></ul><h2 id="4-问答论坛">4.问答论坛</h2><p><a href="https://www.guyuehome.com/blog/index">古月居 (guyuehome.com)</a></p><p><img src="https://image.thum.io/get/allowJPG/wait/20/width/600/crop/950/https://www.guyuehome.com/blog/index" alt=""></p><p><a href="https://www.fishros.org.cn/forum/">主页 | 鱼香ROS (fishros.org.cn)</a></p><p><img src="https://image.thum.io/get/allowJPG/wait/20/width/600/crop/950/https://www.fishros.org.cn/forum/" alt=""></p><h2 id="5-常用链接">5.常用链接</h2><ul><li><p>ROS：<a href="https://www.ros.org/">https://www.ros.org</a></p></li><li><p>ROS 2 Documentation：<a href="https://docs.ros.org/en/humble/index.html">https://docs.ros.org/en/humble/index.html</a></p></li><li><p>古月居：<a href="https://www.guyuehome.com/">https://www.guyuehome.com/</a></p></li><li><p>ROS : <a href="https://www.ros.org/">https://www.ros.org</a></p></li><li><p>ROS Wiki : <a href="http://wiki.ros.org/">http://wiki.ros.org/</a></p></li><li><p>ROSCon : <a href="https://roscon.ros.org/">https://roscon.ros.org</a></p></li><li><p>ROS Robots : <a href="https://robots.ros.org/">https://robots.ros.org/</a></p></li><li><p>Ubuntu Wiki ： <a href="https://wiki.ubuntu.org.cn/">https://wiki.ubuntu.org.cn</a></p></li><li><p>ROS2 Github ： <a href="https://github.com/ros2">https://github.com/ros2</a></p></li><li><p>Gazebo : <a href="https://classic.gazebosim.org/">https://classic.gazebosim.org</a></p></li></ul><div class="note info flat"><p>注意：相关链接还在持续补充中，有失效或更好的资源链接请评论补充，感谢大家！</p></div>]]></content>
-    
-    
-    <summary type="html">ROS常用资源汇总（从入门到入坟）</summary>
-    
-    
-    
-    <category term="资源汇总" scheme="https://www.mgodmonkey.love/categories/%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/"/>
-    
-    
-    <category term="ros" scheme="https://www.mgodmonkey.love/tags/ros/"/>
     
   </entry>
   
