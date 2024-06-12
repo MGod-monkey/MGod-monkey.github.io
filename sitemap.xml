@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://www.mgodmonkey.cn/posts/cfe889db.html</loc>
+    
+    <lastmod>2024-06-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.mgodmonkey.cn/posts/f1cb77fb.html</loc>
     
     <lastmod>2024-06-12</lastmod>
@@ -83,15 +92,6 @@
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.cn/posts/cfe889db.html</loc>
-    
-    <lastmod>2024-04-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.mgodmonkey.cn/posts/eb82f52e.html</loc>
     
     <lastmod>2024-04-03</lastmod>
@@ -146,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.cn/lovezone/wechat/index.html</loc>
+    <loc>https://www.mgodmonkey.cn/lovezone/lovezone/index.html</loc>
     
     <lastmod>2024-04-01</lastmod>
     
@@ -155,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.cn/lovezone/lovezone/index.html</loc>
+    <loc>https://www.mgodmonkey.cn/lovezone/wechat/index.html</loc>
     
     <lastmod>2024-04-01</lastmod>
     
@@ -182,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.cn/album/huiPhoto/index.html</loc>
+    <loc>https://www.mgodmonkey.cn/album/dailyPhoto/index.html</loc>
     
     <lastmod>2024-02-26</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.cn/album/dailyPhoto/index.html</loc>
+    <loc>https://www.mgodmonkey.cn/album/huiPhoto/index.html</loc>
     
     <lastmod>2024-02-26</lastmod>
     
@@ -281,7 +281,7 @@
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.cn/personal/task_list/index.html</loc>
+    <loc>https://www.mgodmonkey.cn/site/census/index.html</loc>
     
     <lastmod>2024-01-30</lastmod>
     
@@ -290,7 +290,7 @@
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.cn/site/census/index.html</loc>
+    <loc>https://www.mgodmonkey.cn/personal/task_list/index.html</loc>
     
     <lastmod>2024-01-30</lastmod>
     
@@ -738,14 +738,14 @@
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.cn/categories/%E6%B5%8B%E8%AF%84/%E9%A6%99%E6%A9%99%E6%B4%BE/</loc>
+    <loc>https://www.mgodmonkey.cn/categories/Airsim/</loc>
     <lastmod>2024-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.cn/categories/Airsim/</loc>
+    <loc>https://www.mgodmonkey.cn/categories/%E6%B5%8B%E8%AF%84/%E9%A6%99%E6%A9%99%E6%B4%BE/</loc>
     <lastmod>2024-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
