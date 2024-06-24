@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Linux/Ubuntu安装图形界面版clash-gui</title>
+      <link href="/posts/a5d6f412.html"/>
+      <url>/posts/a5d6f412.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-安装Clash">1.安装Clash</h2><ol><li><p>首先，下载<a href="https://github.com/MGod-monkey/clash-for-all-backup/releases/download/v0.20.39/Clash.for.Windows-0.20.39-x64-linux.tar.gz">Clash.for.Windows-0.20.39-x64-linux.tar.gz</a>【网速慢的用gitee进行下载：<a href="https://gitee.com/mgod_wu/clash-for-all-backup/releases/tag/v0.20.39">https://gitee.com/mgod_wu/clash-for-all-backup/releases/tag/v0.20.39</a>】，下载完成后终端进入下载目录运行以下命令进行解压：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf Clash.for.Windows-0.20.39-x64-linux.tar.gz</span><br></pre></td></tr></table></figure></li><li><p>解压完成后，可以将文件夹改名并移到<code>/opt/</code>：目录中：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> Clash\ <span class="keyword">for</span>\ Windows-0.20.39-x64-linux /opt/clash</span><br></pre></td></tr></table></figure></li><li><p>通过<code>sudo ls /opt/clash</code>查看目录内结构：</p><p><img src="https://s2.loli.net/2024/06/18/TQIAzWxSZ5as3rF.png" alt=""></p></li><li><p><code>cfw</code>就是<code>clash for windows</code>的意思，原作者把gui界面也移植到了linux中，我们可以运行以下命令打开：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./cfw</span><br></pre></td></tr></table></figure><p>打开之后就是以下界面：<br><img src="https://s2.loli.net/2024/06/18/L3DnK28uMkiwjls.png" alt=""></p><p>勾选底下的<code>start with linux</code>，这样就可以开机跟随系统启动了</p></li><li><p>代理地址的导入只需要切换到<code>Profiles</code>页面，输入自己购买的订阅地址即可：<br><img src="https://s2.loli.net/2024/06/18/smnlXTxHBgV84oQ.png" alt=""><br>订阅完成后，切换到<code>Proxis</code>页面就可以切换节点：<br><img src="https://s2.loli.net/2024/06/18/Po7d4r3sflCLYUS.png" alt=""></p></li></ol><h2 id="2-配置桌面图标">2. 配置桌面图标</h2><p><code>clash for windows</code>linux版本默认是没有桌面图标的，如果退出了就只能重新通过命令行进入，比较麻烦，所以这里我们配置一下桌面图标。</p><ol><li><p>进入<code>~/.local/share/applications</code>目录：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.local/share/applications</span><br></pre></td></tr></table></figure></li><li><p>创建<code>clash_gui.desktop</code>：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano clash_gui.desktop</span><br></pre></td></tr></table></figure><p>输入以下内容</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Name=clash <span class="keyword">for</span> linux</span><br><span class="line">Icon=/opt/clash/clash.png</span><br><span class="line">Exec=/opt/clash/cfw</span><br><span class="line">Type=Application</span><br></pre></td></tr></table></figure><blockquote><p>需要根据自己的情况修改的只有以下两个字段：</p><ul><li><p><code>Icon</code> 是桌面图标所在地址，可以自己网上找一个clash图标下载即可，例如我的图标是：<a href="https://gitee.com/mgod_wu/clash-for-all-backup/raw/main/clash.png">https://gitee.com/mgod_wu/clash-for-all-backup/raw/main/clash.png</a></p></li><li><p><code>Exec</code> 表示<code>cfw</code>命令，这里我的<code>cfw</code>文件是在<code>/opt/clash-GUI/clash/</code>下，所以我的执行命令如上所是。<br>然后保存退出。</p></li></ul><p><strong>注：确保路径正确，否则图标将不会显示</strong></p></blockquote></li><li><p>最后增加权限:</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> a+x clash_gui.desktop</span><br></pre></td></tr></table></figure><p>然后便可在应用程序中看到clash的桌面图标了，下次我们直接点击桌面图标进入即可，右键图标还可以选择加入图标。</p><p><img src="https://s2.loli.net/2024/06/18/ERZXeh89fb7Jpma.png" alt=""></p></li></ol><h2 id="3-开启系统代理">3. 开启系统代理</h2><p>不同于windows版本的clash-gui，linux下的系统代理需要自己在系统的网络中进行手动设置，设置过程如下：</p><ul><li>打开ubuntu的系统设置，选择<code>网络</code>—&gt;<code>网络代理</code></li></ul><p><img src="https://s2.loli.net/2024/06/18/pWan3FIfu2lScTg.png" alt=""></p><ul><li>将网络代理切换为<code>手动</code>，如图所示，将HTTP和HTTPS代理端口填写为上面获取到的HTTP端口，Socks主机端口号也填写成如下形式。</li></ul><p><img src="https://s2.loli.net/2024/06/18/964XldcAZ2fwhyv.png" alt=""></p><p>这样系统代理部分就完成了，之后只要在clash中选择节点通常就可以使用了。如果需要关闭代理，那么同样把<code>网络代理</code>从<code>手动</code>改为<code>关闭</code>即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> clash </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>从0制作自主空中机器人-5-Airsim-PX4仿真环境搭建</title>
       <link href="/posts/982cb875.html"/>
       <url>/posts/982cb875.html</url>
