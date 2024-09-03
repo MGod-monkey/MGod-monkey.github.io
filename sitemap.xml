@@ -236,6 +236,15 @@
   </url>
   
   <url>
+    <loc>https://www.mgodmonkey.cn/album/MyYungBaby/index.html</loc>
+    
+    <lastmod>2024-07-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.mgodmonkey.cn/album/dailyPhoto/index.html</loc>
     
     <lastmod>2024-07-25</lastmod>
@@ -246,15 +255,6 @@
   
   <url>
     <loc>https://www.mgodmonkey.cn/album/huiPhoto/index.html</loc>
-    
-    <lastmod>2024-07-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mgodmonkey.cn/album/MyYungBaby/index.html</loc>
     
     <lastmod>2024-07-25</lastmod>
     
@@ -681,13 +681,6 @@
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.cn/tags/%E6%B5%8B%E8%AF%84/</loc>
-    <lastmod>2024-09-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.mgodmonkey.cn/tags/%E4%BB%BF%E7%9C%9F/</loc>
     <lastmod>2024-09-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -710,6 +703,13 @@
   
   <url>
     <loc>https://www.mgodmonkey.cn/tags/esp-idf/</loc>
+    <lastmod>2024-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mgodmonkey.cn/tags/%E6%B5%8B%E8%AF%84/</loc>
     <lastmod>2024-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -788,13 +788,6 @@
   </url>
   
   <url>
-    <loc>https://www.mgodmonkey.cn/categories/%E6%B5%8B%E8%AF%84/</loc>
-    <lastmod>2024-09-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.mgodmonkey.cn/categories/Linux/</loc>
     <lastmod>2024-09-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -803,6 +796,13 @@
   
   <url>
     <loc>https://www.mgodmonkey.cn/categories/esp-idf/</loc>
+    <lastmod>2024-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mgodmonkey.cn/categories/%E6%B5%8B%E8%AF%84/</loc>
     <lastmod>2024-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
